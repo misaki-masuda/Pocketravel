@@ -30,7 +30,7 @@ https://docs.google.com/spreadsheets/d/1iFUJ1u9g2EHm1xkRQkWp7FKXCthS3wB1D3QwCSAF
 
 ## 開発環境
 
-- OS：macbook air
+- OS：linux
 - 言語：HTML,CSS,Ruby,SQL
 - フレームワーク：Ruby on Rails
 <!--- JS ライブラリ：jQuery-->
