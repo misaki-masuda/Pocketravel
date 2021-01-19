@@ -1,0 +1,17 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="flex-title">
+          【 <%= @post.title %> 】
+        </div>
+        <div class="flev-body">
+          <%= @post.body %>
+        </div>
+        <div>
+          <%= attachment_image_tag @post, :image, size:"400x300" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

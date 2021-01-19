@@ -1,0 +1,28 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <table class="table table-striped">
+          <thead>
+            <th>エリア別</th>
+          </thead>
+          <tbody>
+            <% @areas.each do |area| %>
+        		  <tr><td><%= link_to area.name, posts_path(area_id: area.id, post_or_area: true) %></td></tr>
+        		<% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-9 text-left">
+        <div class="point">投稿一覧</div>
+          <% @posts.each do |post| %>
+        		<div class="flex">
+        		  <th><%= attachment_image_tag post, :image, size: "150x100" %></th>
+        			<div class="flex-title">【 <%= link_to post.title, post_path(post.id) %> 】</div>
+        			<div class="flex-body"><%= post.body %></div>
+        		</div>
+        	<% end %>
+      </div>
+    </div>
+  </div>
+</body>
