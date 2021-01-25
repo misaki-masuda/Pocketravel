@@ -1,2 +1,31 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="point">編集画面</div>
+        <%= form_with model: @post, url: post_path(@post), local: true do |f| %>
+          <table class="table">
+            <div class="form-group">
+              <div class="thing">画像
+              <%= f.attachment_field :image %></div>
+            </div>
+            <div class="form-group">
+              <div class="thing">名称
+              <%= f.text_field :title, :placeholder => "観光名称" %></div>
+            </div>
+            <div class="form-group">
+              <div class="thing">紹介文
+              <%= f.text_field :body, size: "40x20", :placeholder => "ここに観光地の紹介文を記述します。" %></div>
+            </div>
+            <div class="form-group">
+              <div class="thing">エリア
+              <%= f.collection_select :area_id, @areas, :id, :name,{prompt: "エリア選択してください"}, { class: 'form-control' , required: true } %>
+              </div>
+            </div>
+              <%= f.submit '更新する', class: "btn btn-success" %>
+          </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,17 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="point">お気に入りリスト</div>
+        <% @favorites.each do |favorite| %>
+          <%#= attachment_image_tag favorite.post.image, :image, size:"400x300" %>
+        <div class="flex-title">
+          【 <%= favorite.post.title %> 】
+        </div>
+          <%= favorite.post.body %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
+      

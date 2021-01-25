@@ -11,6 +11,13 @@
         <div>
           <%= attachment_image_tag @post, :image, size:"400x300" %>
         </div>
+          <%= link_to "一覧へ", posts_path %> | 
+          <% if @post.user_id == current_user.id %>
+            <%= link_to "編集する", edit_post_path(@post) %> |
+          <% end %>
+          <% if user_signed_in? %>
+            <%= link_to "リストに追加", favorites_path(post_id: @post.id, user_id: current_user.id), method: :POST %>
+          <% end %>
       </div>
     </div>
   </div>

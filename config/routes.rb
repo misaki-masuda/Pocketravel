@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
   devise_for :users, controllers: {
     # sessions: 'devise/user/sessions',
     # registrations: 'devise/user/registrations',
@@ -10,6 +11,6 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'home/about' => 'homes#about'
   resources :users, only:[:show]
-  resources :posts, except: [:destroy]
+  resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :favorites, only: [:index, :destroy, :create]
 end

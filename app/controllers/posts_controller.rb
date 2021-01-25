@@ -32,10 +32,15 @@ class PostsController < ApplicationController
    end
   end
 
-  def update
+  def edit
+    @post = Post.find(params[:id])
+    @areas = Area.all
   end
 
-  def edit
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+      redirect_to post_path(@post.id)
   end
   
   private
